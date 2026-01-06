@@ -9,7 +9,6 @@ export default function decorate(block) {
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) {
         div.className = 'cards-card-image';
-        div.addEventListener("click", function(){ console.log("card img clicked"); } );
       }
       else div.className = 'cards-card-body';
     });
@@ -17,4 +16,5 @@ export default function decorate(block) {
   });
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '250' }])));
   block.replaceChildren(ul);
+  console.log("this is my log");
 }
