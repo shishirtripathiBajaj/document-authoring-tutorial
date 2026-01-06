@@ -4,34 +4,43 @@
 }
 
 .hero {
-  position: relative;
+  /* Changed: removed position: relative and min-height */
+  display: flex;
+  flex-direction: column;
+  padding: 0; /* Padding moved to text container for better alignment */
+}
+
+.hero .hero-content-wrapper {
+  /* Added: This handles the text padding now that the image is separate */
   padding: 40px 24px;
-  min-height: 300px;
 }
 
 .hero h1 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--background-color);
+  /* Changed: removed white color so it's visible on light backgrounds */
+  color: inherit; 
 }
 
 .hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  /* Changed: removed absolute positioning and inset */
+  position: static;
+  z-index: 1;
+  width: 100%;
+  line-height: 0;
 }
 
 .hero img {
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  /* Changed: allow height to be auto or defined, instead of 100% of parent */
+  height: auto;
+  max-height: 400px; /* Optional: prevents image from being too tall */
 }
 
 @media (width >= 900px) {
-  .hero {
+  .hero .hero-content-wrapper {
     padding: 40px 32px;
   }
 }
