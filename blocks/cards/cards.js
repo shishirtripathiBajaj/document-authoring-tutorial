@@ -9,7 +9,7 @@ export default function decorate(block) {
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) {
         div.className = 'cards-card-image';
-        div.addEventListener("click", function(){ alert("card img clicked"); } );
+        div.addEventListener("click", function(){ console.log("card img clicked"); } );
       }
       else div.className = 'cards-card-body';
     });
