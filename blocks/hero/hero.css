@@ -12,7 +12,8 @@
 
 .hero .hero-content-wrapper {
   /* Added: This handles the text padding now that the image is separate */
-  padding: 40px 24px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero h1 {
@@ -27,16 +28,16 @@
   /* Changed: removed absolute positioning and inset */
   position: static;
   z-index: 1;
-  width: 100%;
+  width: 10%;
   line-height: 0;
 }
 
 .hero img {
   object-fit: cover;
-  width: 100%;
+  width: 10%;
   /* Changed: allow height to be auto or defined, instead of 100% of parent */
   height: auto;
-  max-height: 400px; /* Optional: prevents image from being too tall */
+  max-height: 40px; /* Optional: prevents image from being too tall */
 }
 
 @media (width >= 900px) {
